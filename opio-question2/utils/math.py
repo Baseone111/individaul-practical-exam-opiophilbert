@@ -1,5 +1,5 @@
 def factorial(n):
-    """Calculate factorial of a number."""
+    #Calculate factorial of a number.
     if n < 0:
         raise ValueError("Factorial is not defined for negative numbers")
     result = 1
@@ -8,13 +8,13 @@ def factorial(n):
     return result
 
 def gcd(a, b):
-    """Calculate Greatest Common Divisor using Euclidean algorithm."""
+    #Calculate Greatest Common Divisor using Euclidean algorithm.
     while b:
         a, b = b, a % b
     return a
 
 def fibonacci(n):
-    """Generate Fibonacci sequence up to n terms."""
+    #Generate Fibonacci sequence up to n terms.
     sequence = []
     a, b = 0, 1
     for _ in range(n):
