@@ -1,0 +1,6 @@
+--- Fetch batch at 2025-11-11 10:30:22 ---
+octocat -> OK: public_repos=8, name=The Octocat
+torvalds -> OK: public_repos=9, name=Linus Torvalds
+mojombo -> OK: public_repos=66, name=Tom Preston-Werner
+defunkt -> OK: public_repos=107, name=Chris Wanstrath
+pjhyett -> OK: public_repos=8, name=PJ Hyett
