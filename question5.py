@@ -1,10 +1,3 @@
-"""
-Question 5: Concurrency on Real Data - Professional Solution
-Author: [Your Name]
-Date: November 11, 2025
-
-This script demonstrates threading and multiprocessing concepts using real-world datasets.
-"""
 
 import threading
 import time
@@ -17,20 +10,15 @@ import sys
 
 
 def print_numbers(thread_name):
-    """
-    Function for each thread to print its name and numbers 1-5.
-    
-    Args:
-        thread_name (str): Name of the thread
-    """
+  
     for i in range(1, 6):
         print(f"{thread_name}: {i}")
         time.sleep(1)
 
 def question_5a():
-    """
-    Solution for Question 5a: Creates three threads that print numbers 1-5.
-    """
+
+    #Solution for Question 5a: Creates three threads that print numbers 1-5.
+
     print("=" * 60)
     print("QUESTION 5A: Basic Threading")
     print("=" * 60)
@@ -52,9 +40,9 @@ def question_5a():
     print("\nAll threads complete.")
     print()
 
-# ============================================================================
+
 # QUESTION 5B: Real Dataset Processing with Threading
-# ============================================================================
+
 
 # Dataset URLs
 DATASETS = {
@@ -68,13 +56,7 @@ data_lock = threading.Lock()
 downloaded_data = {}
 
 def download_dataset(dataset_name, url):
-    """
-    Downloads a dataset from the given URL.
-    
-    Args:
-        dataset_name (str): Name identifier for the dataset
-        url (str): URL to download from
-    """
+   #downloads the dataset from a given url of the dataset_name attribute value
     print(f"[{dataset_name}] Starting download from {url}")
     
     try:
@@ -92,9 +74,9 @@ def download_dataset(dataset_name, url):
             downloaded_data[dataset_name] = None
 
 def process_population_data():
-    """
-    Thread 1: Compute total world population for 2020.
-    """
+
+    #Thread 1: Compute total world population for 2020.
+    
     print("\n[Population Analysis] Starting processing...")
     
     try:
@@ -118,9 +100,9 @@ def process_population_data():
         print(f"[Population Analysis] Error: {str(e)}")
 
 def process_covid_data():
-    """
-    Thread 2: Compute total new COVID cases.
-    """
+    
+    #Thread 2: Compute total new COVID cases.
+    
     print("\n[COVID Analysis] Starting processing...")
     
     try:
@@ -227,19 +209,12 @@ def question_5b_part_b():
     
     print("\n[Main Thread] All processing completed")
 
-# ============================================================================
+
 # QUESTION 5B - PART C (BONUS): Multiprocessing Comparison
-# ============================================================================
+
 
 def download_and_process_multiprocess(dataset_name, url, result_queue):
-    """
-    Function for multiprocessing: downloads and processes data.
-    
-    Args:
-        dataset_name (str): Name of the dataset
-        url (str): URL to download from
-        result_queue (Queue): Queue to store results
-    """
+    #function for multiprocessing ie. download and process data
     try:
         # Download
         response = requests.get(url, timeout=30)
@@ -347,9 +322,9 @@ def question_5b_part_c():
         print("\nNote: For CPU-bound tasks, multiprocessing typically")
         print("performs better by utilizing multiple CPU cores.")
 
-# ============================================================================
+
 # MAIN EXECUTION
-# ============================================================================
+
 
 def main():
     """
